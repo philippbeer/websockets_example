@@ -23,6 +23,8 @@
 
     ws.addEventListener("open", () => {
 	console.log("connection established");
+
+	ws.send("sending message from browser to server");
     });
   </script>
 </body>
