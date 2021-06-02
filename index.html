@@ -23,8 +23,11 @@
 
     ws.addEventListener("open", e => {
 	ws.send(JSON.stringify({
-	    lat: 48.08651232982592,
-	    lon: 11.66152033678722
+	    event: "PLAYER_MOVEMENT",
+	    payload: {
+		lat: 48.08651232982592,
+		lon: 11.66152033678722
+	    }
 	}));
     });
 
