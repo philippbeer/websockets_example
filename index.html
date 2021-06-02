@@ -26,6 +26,10 @@
 
 	ws.send("sending message from browser to server");
     });
+
+    ws.addEventListener("message", ({ data }) => {
+	console.log(data);
+    });
   </script>
 </body>
 </html>
