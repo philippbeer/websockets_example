@@ -15,21 +15,20 @@
 <body>
   <h1>Websockets example</h1>
   <ul class="tsummary">
-    <li>simple websockets example based on js</li>
+    <li>simple websocket setup to send json via websockets in js</li>
   </ul>
   
   <script>
     const ws = new WebSocket("ws://localhost:8082");
 
-    ws.addEventListener("open", () => {
-	console.log("connection established");
-
-	ws.send("sending message from browser to server");
+    ws.addEventListener("open", e => {
+	ws.send(JSON.stringify({
+	    lat: 48.08651232982592,
+	    lon: 11.66152033678722
+	}));
     });
 
-    ws.addEventListener("message", ({ data }) => {
-	console.log(data);
-    });
+
   </script>
 </body>
 </html>
